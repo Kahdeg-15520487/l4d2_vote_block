@@ -73,14 +73,14 @@ public void OnPluginStart()
 	 */
 	CreateConVar("sm_voteblock_version", PLUGIN_VERSION, "Plugin Version.", FCVAR_REPLICATED | FCVAR_NOTIFY | FCVAR_DONTRECORD);
 	g_bCvarAllow = CreateConVar("vote_block_on", "1", "Enable plugin. 1=Plugin On. 0=Plugin Off", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	g_bCvarPrintChat = CreateConVar("vote_block_print_on", "1", "Enable plugin to print to chat. 1=Plugin On. 0=Plugin Off", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	g_bCvarBlockKick = CreateConVar("vote_kick_block_on", "1", "Block kick vote. 1=Disable. 0=Enable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	g_bCvarBlockLobby = CreateConVar("vote_returntolobby_block_on", "1", "Block return to lobby vote. 1=Disable. 0=Enable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	g_bCvarBlockAllTalk = CreateConVar("vote_changealltalk_block_on", "1", "Block change all talk vote. 1=Disable. 0=Enable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	g_bCvarBlockRestart = CreateConVar("vote_restart_block_on", "1", "Block restart vote. 1=Disable. 0=Enable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	g_bCvarBlockMission = CreateConVar("vote_changemission_block_on", "1", "Block change mission vote. 1=Disable. 0=Enable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	g_bCvarBlockChapter = CreateConVar("vote_changechapter_block_on", "1", "Block change chapter vote. 1=Disable. 0=Enable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
-	g_bCvarBlockDifficulty = CreateConVar("vote_changedifficulty_block_on", "1", "Block change difficulty vote. 1=Disable. 0=Enable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	g_bCvarPrintChat = CreateConVar("vote_block_print_on", "1", "Enable plugin to print to chat. 1=Enable. 0=Disable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	g_bCvarBlockKick = CreateConVar("vote_kick_block_on", "1", "Block kick vote. 1=Enable. 0=Disable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	g_bCvarBlockLobby = CreateConVar("vote_returntolobby_block_on", "1", "Block return to lobby vote. 1=Enable. 0=Disable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	g_bCvarBlockAllTalk = CreateConVar("vote_changealltalk_block_on", "1", "Block change all talk vote. 1=Enable. 0=Disable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	g_bCvarBlockRestart = CreateConVar("vote_restart_block_on", "1", "Block restart vote. 1=Enable. 0=Disable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	g_bCvarBlockMission = CreateConVar("vote_changemission_block_on", "1", "Block change mission vote. 1=Enable. 0=Disable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	g_bCvarBlockChapter = CreateConVar("vote_changechapter_block_on", "1", "Block change chapter vote. 1=Enable. 0=Disable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
+	g_bCvarBlockDifficulty = CreateConVar("vote_changedifficulty_block_on", "1", "Block change difficulty vote. 1=Enable. 0=Disable", FCVAR_NOTIFY, true, 0.0, true, 1.0);
 	
 	AutoExecConfig(true, CONFIG_FILENAME);
 
