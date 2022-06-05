@@ -30,8 +30,8 @@
 
 #define MAX_CLIENTS MaxClients
 
-#define CONFIG_FILENAME "vote_block"
-#define CONFIG_FILE "vote_block.cfg"
+#define CONFIG_FILENAME "l4d2_vote_block"
+#define CONFIG_FILE "l4d2_vote_block.cfg"
 #define PREFIX 		"\x04[Vote Block (simple)]\x03"
 
 #define KICK_REASON "kick"
@@ -97,6 +97,10 @@ public Action Listener_CallVote(int client, const char[] command, int args) {
 		return Plugin_Continue;
 	}
 	
+	if (IsClientAdmin(client)){
+		return Plugin_Continue;
+	}
+	
 	char issue[255];
 	GetCmdArg(1, issue, sizeof(issue));
 	
@@ -159,4 +163,19 @@ public void DebugPrint(const char[] format, any...) {
 
 public bool IsPluginDisabled() {
 	return !g_bCvarAllow.BoolValue;
+}
+
+public bool IsClientAdmin(int client)
+{
+	// If the client has the ban flag, return true
+	if (CheckCommandAccess(client, "admin_ban", ADMFLAG_BAN, false))
+	{
+		return true;
+	}
+
+	// If the client does not, return false
+	else
+	{
+		return false;
+	}
 }
